@@ -10,12 +10,21 @@ import java.util.Arrays;
  * @Description JDK动态代理
  */
 public class UserLoginDynamicProxy implements InvocationHandler {
+    //被代理的对象
     private Object obj;
 
     public UserLoginDynamicProxy(Object obj) {
         this.obj = obj;
     }
 
+    /**
+     *
+     * @param proxy JVM运行时的代理对象
+     * @param method 被代理的方法
+     * @param args 被代理方法参数列表
+     * @return
+     * @throws Throwable
+     */
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         System.out.println("log context {} start , method name {} "+method.getName()+", paramters[0] {} ");
